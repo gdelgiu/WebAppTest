@@ -1,3 +1,5 @@
+import Page from "./paginator_conts/Page";
+
 function Paginator() {
   return (
     <div className="container ms-0 mt-0">
@@ -6,21 +8,13 @@ function Paginator() {
           <li className="page-item disabled">
             <a className="page-link">Previous</a>
           </li>
-          <li className="page-item">
-            <a className="page-link" href="#">
-              1
-            </a>
-          </li>
-          <li className="page-item active" aria-current="page">
-            <a className="page-link" href="#">
-              2
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="#">
-              3
-            </a>
-          </li>
+          <li>{Array.from(Array(10)).map(x => 
+            (
+              <Page 
+                count={x}
+              \>
+            ))}
+            </li>
           <li className="page-item">
             <a className="page-link" href="#">
               Next
