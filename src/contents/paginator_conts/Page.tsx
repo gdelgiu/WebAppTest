@@ -1,13 +1,21 @@
-var count;
+import React, { Component } from "react";
 
-function Page() {
-  return (
-    <li className="page-item">
-      <a className="page-link" href="#">
-        {this.count};
-      </a>
-    </li>
-  );
+type VarProps = {
+  pageindex: number;
+};
+
+class Page extends Component<VarProps> {
+  state: VarProps = { pageindex: this.props.pageindex };
+
+  render() {
+    return (
+      <li className="page-item">
+        <a className="page-link" href="#">
+          {this.state.pageindex.toString()}
+        </a>
+      </li>
+    );
+  }
 }
 
 export default Page;
