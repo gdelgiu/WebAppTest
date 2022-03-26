@@ -5,10 +5,12 @@ type VarResults = {
 };
 
 type updateMaxResults = (event: React.MouseEvent<HTMLButtonElement>) => void;
+type updateParent = () => void;
 
 export default class ResultsButton extends Component<
   VarResults,
-  updateMaxResults
+  updateMaxResults,
+  updateParent
 > {
   state: VarResults = {
     maxResults: 5
@@ -39,7 +41,7 @@ export default class ResultsButton extends Component<
         className="btn btn-primary"
         onClick={this.updateMaxResults}
       >
-        {this.state.maxResults}
+        Max Results: {this.state.maxResults}
       </button>
     );
   }
