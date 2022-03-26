@@ -8,7 +8,7 @@ type Counter = {
 
 class Paginator extends Component<Counter> {
   state: Counter = {
-    pageNum: 10
+    pageNum: this.props.pageNum
   };
 
   render() {

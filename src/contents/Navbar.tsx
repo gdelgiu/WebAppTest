@@ -1,6 +1,6 @@
-import Dropdown from "./navbar_conts/Dropdown";
 import SearchBar from "./navbar_conts/SearchBar";
 import CustomName from "./navbar_conts/CustomName";
+import ResultsButton from "./navbar_conts/ResultsButton";
 import NavTogglerButton from "./navbar_conts/NavTogglerButton";
 
 function Navbar() {
@@ -10,7 +10,7 @@ function Navbar() {
         <CustomName />
         <NavTogglerButton />
         <SearchBar />
-        <Dropdown />
+        <ResultsButton />
       </div>
     </nav>
   );
