@@ -38,7 +38,7 @@ export default class ResultsButton extends Component<
     return (
       <button
         type="button"
-        className="btn btn-primary"
+        className="btn btn-outline-primary"
         onClick={this.updateMaxResults}
       >
         Max Results: {this.state.maxResults}

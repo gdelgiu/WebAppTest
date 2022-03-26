@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import { Component } from "react";
+import Card from "./contents/Card";
 import Navbar from "./contents/Navbar";
 import Paginator from "./contents/Paginator";
 import "./styles.css";
@@ -23,12 +24,18 @@ export default class App extends Component<VarMain, updatePages> {
     this.setState({
       maxPages: value
     });
+    if (this.state.maxPages >= 20) {
+      this.setState({
+        maxPages: 5
+      });
+    }
   }
 
   render() {
     return (
       <>
         <Navbar updatePages={this.updatePages} />
+        <Card />
         <Paginator pageNum={this.state.maxPages} />
       </>
     );

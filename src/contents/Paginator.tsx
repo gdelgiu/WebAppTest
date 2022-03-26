@@ -13,7 +13,7 @@ class Paginator extends Component<Counter> {
 
   render() {
     return (
-      <div className="container ms-0 mt-0">
+      <div className="d-flex justify-content-center">
         <nav aria-label="...">
           <ul className="pagination">
             <li className="page-item disabled">
@@ -23,9 +23,7 @@ class Paginator extends Component<Counter> {
               <Page key={x} pageindex={x + 1} />
             ))}
             <li className="page-item">
-              <a className="page-link" href="#">
-                Next
-              </a>
+              <a className="page-link">Next</a>
             </li>
           </ul>
         </nav>
