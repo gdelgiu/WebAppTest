@@ -19,7 +19,7 @@ class Paginator extends Component<Counter> {
             <li className="page-item disabled">
               <a className="page-link">Previous</a>
             </li>
-            {Array.from(Array(this.state.pageNum).keys()).map((x) => (
+            {Array.from(Array(this.props.pageNum).keys()).map((x) => (
               <Page key={x} pageindex={x + 1} />
             ))}
             <li className="page-item">

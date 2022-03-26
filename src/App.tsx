@@ -7,15 +7,28 @@ type VarMain = {
   maxPages: number;
 };
 
-export default class App extends Component<VarMain> {
+type updatePages = (value: number) => void;
+
+export default class App extends Component<VarMain, updatePages> {
   state: VarMain = {
     maxPages: 5
   };
 
+  constructor(props: any) {
+    super(props);
+    this.updatePages = this.updatePages.bind(this);
+  }
+
+  updatePages(value: number) {
+    this.setState({
+      maxPages: value
+    });
+  }
+
   render() {
     return (
       <>
-        <Navbar />
+        <Navbar updatePages={this.updatePages} />
         <Paginator pageNum={this.state.maxPages} />
       </>
     );

@@ -5,26 +5,13 @@ import ResultsButton from "./navbar_conts/ResultsButton";
 import NavTogglerButton from "./navbar_conts/NavTogglerButton";
 
 type VarContents = {
-  buttonMaxResults: number;
+  updatePages: (value: number) => void;
 };
 
-type updateButtonMaxResults = () => void;
-
-class Navbar extends Component<VarContents, updateButtonMaxResults> {
+class Navbar extends Component<VarContents> {
   state: VarContents = {
-    buttonMaxResults: 5
+    updatePages: this.props.updatePages
   };
-
-  constructor(props: any) {
-    super(props);
-    this.updateButtonMaxResults = this.updateButtonMaxResults.bind(this);
-  }
-
-  updateButtonMaxResults() {
-    this.setState({
-      buttonMaxResults: 1
-    });
-  }
 
   render() {
     return (
@@ -33,7 +20,7 @@ class Navbar extends Component<VarContents, updateButtonMaxResults> {
           <CustomName />
           <NavTogglerButton />
           <SearchBar />
-          <ResultsButton maxResults={5} />
+          <ResultsButton maxResults={5} updatePages={this.state.updatePages} />
         </div>
       </nav>
     );
